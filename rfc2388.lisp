@@ -431,9 +431,10 @@ is a list of (NAME . VALUE)"))
                                                  :direction :output
                                                  ;; external format for faithful I/O
                                                  ;; see <http://cl-cookbook.sourceforge.net/io.html#faith>
-                                                 #+(or :sbcl :lispworks :allegro :openmcl :clisp)
+                                                 #+(or :sbcl :lispworks :allegro :openmcl :clisp :cl-amiga)
                                                  :external-format
                                                  #+sbcl :latin-1
+                                                 #+:cl-amiga :latin-1
                                                  #+:lispworks '(:latin-1 :eol-style :lf)
                                                  #+:allegro (excl:crlf-base-ef :latin1)
                                                  #+:openmcl '(:character-encoding :iso-8859-1
